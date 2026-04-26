@@ -1,0 +1,53 @@
+﻿@model IEnumerable<mf_dev_backend_2026.Models.Veiculo>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Veiculos</h1>
+<p>
+    <a asp-action="Create" class="btn btn-success">Adicionar veiculo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoFabricacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoModelo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.NomeVeiculo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Placa)</td>
+                <td>@Html.DisplayFor(modelItem => item.AnoFabricacao)</td>
+                <td>@Html.DisplayFor(modelItem => item.AnoModelo)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+    <tbody>

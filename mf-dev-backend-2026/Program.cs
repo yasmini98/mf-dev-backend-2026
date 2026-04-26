@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using mf_dev_backend_2026.Models;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
